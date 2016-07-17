@@ -20,24 +20,21 @@
                 },
                 success: function( image_id ){
                     $counter = $counter + 1;
-                    $('body').trigger( 'dda_image_updated', { id:image_id, counter:$counter } );
+
+                    var index = ddair_images.indexOf( image_id );
+
+                    if( index != -1) {
+                        ddair_images.splice( index, 1);
+                        $('#ddair_page h3 span').text( $counter );
+                    }
+
+                    Ajax();
                 }
             });
 
         }
 
     };
-
-    $(document).on( 'dda_image_updated', 'body', function( event, data ){
-        var index = ddair_images.indexOf( data.id );
-
-        if( index != -1) {
-            ddair_images.splice( index, 1);
-            $('#ddair_page h3 span').text( data.counter );
-        }
-
-        Ajax();
-    });
 
 
     /**

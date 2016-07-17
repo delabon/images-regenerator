@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Images Regenerator
- * Plugin URI: http://coloriso.com
+ * Plugin URI: http://ddabout.com/plugins/images-regenerator
  * Description: Regenerate your images, make them looks good.
  * Version: 1.0.0
  * Author: DDAbout
@@ -59,9 +59,11 @@ if( is_admin() ){
 
 			<h1><?php _e('Images Regenerator','ddabout'); ?></h1>
 
-			<a id="ddair_start" href="?page=dda_images_regenerator&process=start" class="button">
+			<br>
+
+			<button id="ddair_start" class="button button-primary">
 				<?php _e('Regenerate Now','ddabout');?>
-			</a>
+			</button>
 
 			<div style="display: none;">
 				<h3><?php _e('Done', 'ddabout'); ?> ( <span>0</span> / <?php echo count( $query_images->get_posts() ); ?> )</h3>
